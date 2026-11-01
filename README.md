@@ -28,6 +28,7 @@ to OBS's own VST 2.x filter first with *Hand over* (see below).
 into `C:\ProgramData\obs-studio\plugins\`: you get the folders `OBS-VST-Ex-Audio-Filter` (VST Ex) and
 `vst-enigmax-loader` (VST Enigmax Loader). Leave out a folder you do not want. To remove it, quit OBS and delete the
 folders (hand VST filters over first, see below).
+To uninstall with a backup, run `OBS-VST-Ex-Audio-Filter\Safe_Uninstaller\Safe_Uninstaller.bat`.
 
 **Uninstall** (Windows Settings > Apps > VST Ex Audio Filter for OBS). The uninstaller:
 1. warns if your scene collections still use VST Enigmax Loader filters, so you can hand them over first;

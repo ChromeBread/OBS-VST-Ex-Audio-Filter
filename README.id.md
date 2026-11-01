@@ -28,6 +28,7 @@ bawaan OBS dengan *Serah terima* (lihat di bawah).
 ke `C:\ProgramData\obs-studio\plugins\`: muncul folder `OBS-VST-Ex-Audio-Filter` (VST Ex) dan `vst-enigmax-loader`
 (VST Enigmax Loader). Folder yang tidak diperlukan boleh tidak disalin. Untuk menghapus, tutup OBS dan hapus foldernya
 (serahterimakan filter VST dulu, lihat di bawah).
+Untuk menghapus sekaligus mencadangkan, jalankan `OBS-VST-Ex-Audio-Filter\Safe_Uninstaller\Safe_Uninstaller.bat`.
 
 **Hapus instalasi** (Pengaturan Windows > Aplikasi > VST Ex Audio Filter for OBS). Penghapus instalasi:
 1. memperingatkan jika koleksi adegan masih memakai filter VST Enigmax Loader, agar bisa diserahterimakan dulu;

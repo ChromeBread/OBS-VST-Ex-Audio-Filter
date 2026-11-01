@@ -1,0 +1,16 @@
+{
+  "app": "VST Ex Audio Filter for OBS",
+  "root": "..\\..",
+  "admin": true,
+  "moveText": "MoveTextPlugin",
+  "items": [
+    { "name": "OBS-VST-Ex-Audio-Filter", "kind": "core" },
+    { "name": "vst-enigmax-loader", "kind": "core" },
+    { "name": "OBS-VST-Ex-Audio-Filter", "kind": "settings", "base": "config" },
+    { "name": "vst-enigmax-loader", "kind": "settings", "base": "config" },
+    { "name": "thumbnails", "kind": "generated", "base": "data", "owner": "vst-enigmax-loader" },
+    { "name": "screenshots", "kind": "generated", "base": "data", "owner": "vst-enigmax-loader" },
+    { "name": "history", "kind": "settings", "base": "data", "owner": "OBS-VST-Ex-Audio-Filter" },
+    { "name": "presets", "kind": "settings", "base": "data", "owner": "OBS-VST-Ex-Audio-Filter" }
+  ]
+}

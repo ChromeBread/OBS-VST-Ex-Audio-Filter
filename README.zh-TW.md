@@ -27,6 +27,7 @@ VST 濾鏡屬於 VST Enigmax Loader，移除它後 OBS 就無法載入這些濾�
 **免安裝版**: `OBS-VST-Ex-Audio-Filter-<版本>-windows-x64-portable.zip`。關閉 OBS 後解壓縮到
 `C:\ProgramData\obs-studio\plugins\`，會得到 `OBS-VST-Ex-Audio-Filter` (VST Ex) 與 `vst-enigmax-loader`
 (VST Enigmax Loader) 兩個資料夾。不需要的資料夾可以不放。移除時關閉 OBS 並刪除資料夾即可 (請先移交 VST 濾鏡，見下方)。
+若要備份後再移除，請執行 `OBS-VST-Ex-Audio-Filter\Safe_Uninstaller\Safe_Uninstaller.bat`。
 
 **解除安裝** (Windows 設定 > 應用程式 > VST Ex Audio Filter for OBS)。解除安裝程式會:
 1. 若場景集合仍使用 VST Enigmax Loader 濾鏡就發出警告，讓你先移交

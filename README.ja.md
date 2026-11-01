@@ -28,6 +28,7 @@ VST フィルタは VST Enigmax Loader のものなので、これを削除す�
 `C:\ProgramData\obs-studio\plugins\` に展開すると `OBS-VST-Ex-Audio-Filter` (VST Ex) と `vst-enigmax-loader`
 (VST Enigmax Loader) の 2 フォルダができます。不要な方はフォルダごと入れなくて構いません。削除は OBS を終了してフォルダを
 消すだけです (VST フィルタは先に引き継いでください。下記参照)。
+バックアップを取りながら削除するには、`OBS-VST-Ex-Audio-Filter\Safe_Uninstaller\Safe_Uninstaller.bat` を実行します。
 
 **アンインストール** (Windows の設定 > アプリ > VST Ex Audio Filter for OBS)。アンインストーラーは:
 1. シーンコレクションに VST Enigmax Loader のフィルタが残っていれば警告し、先に引き継げるようにします

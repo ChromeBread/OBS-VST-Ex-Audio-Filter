@@ -5,7 +5,7 @@
 ; Uninstall asks what to keep; a backup it makes has the same layout as Tools > Debug mode > Backup.
 
 #ifndef AppVersion
-  #define AppVersion "1.4.0"
+  #define AppVersion "1.5.0"
 #endif
 #ifndef StageDir
   #define StageDir "..\build_x64\stage"

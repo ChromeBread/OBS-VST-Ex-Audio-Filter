@@ -1,6 +1,6 @@
 [English](README.md) | **日本語** | [한국어](README.ko.md) | [Bahasa Indonesia](README.id.md) | [Français](README.fr.md) | [繁體中文](README.zh-TW.md)
 
-# OBS VST Ex Audio Filter
+# VST Ex Audio Filter for OBS
 
 OBS Studio 用の拡張オーディオフィルタウィンドウです。歌枠向けの瞬間 ON/OFF 切り替え、レイテンシ測定、チェーン図を備え、
 独自の **VST2 / VST3** ホスト **VST Enigmax Loader** が付属します。「フィルタ (VST Ex)」ウィンドウは OBS 標準の
@@ -11,17 +11,17 @@ VST フィルタは VST Enigmax Loader のものなので、これを削除す�
 削除する前に、VST2 のフィルタは「引き継ぎ」(下記) で OBS 標準の VST 2.x フィルタへ移してください。
 
 - Windows x64、OBS Studio 31 以降 (33.0 で動作確認)
-- 製作者: BlackDream feat. ChromeBread ・ ライセンス: GPL-2.0
+- 製作者: ChromeBread feat. BlackDream ・ ライセンス: GPL-2.0
 
 ## インストール
 
 1. [Releases](../../releases) から `OBS-VST-Ex-Audio-Filter-<バージョン>-windows-x64-setup.exe` をダウンロード。
 2. OBS を終了して実行。「フル インストール」はすべて、「カスタム インストール」は次から選べます:
-   - VST Ex Audio Filter (必須): 「フィルタ (VST Ex)」、ピッチ / 疑似ステレオ フィルタ、ツール > VST Ex Audio Filter
+   - VST Ex Audio Filter (必須): 「フィルタ (VST Ex)」、ピッチ / 疑似ステレオ フィルタ、ツール > #cbOBScripts > VST Ex Audio Filter
    - VST Enigmax Loader: VST2 / VST3 プラグイン
    - VST Ex Chain View、VST Ex Mixer ドック、VST Ex Switcher ドック
 
-   VST Ex の任意の部分は、あとから ツール > VST Ex Audio Filter でオン / オフできます (OBS 再起動後に反映)。
+   VST Ex の任意の部分は、あとから ツール > #cbOBScripts > VST Ex Audio Filter でオン / オフできます (OBS 再起動後に反映)。
 3. OBS を起動。初回にサムネイル・スクリーンショット・履歴の保存先を聞かれます。
 
 **インストール不要版**: `OBS-VST-Ex-Audio-Filter-<バージョン>-windows-x64-portable.zip`。OBS を終了し、
@@ -29,7 +29,7 @@ VST フィルタは VST Enigmax Loader のものなので、これを削除す�
 (VST Enigmax Loader) の 2 フォルダができます。不要な方はフォルダごと入れなくて構いません。削除は OBS を終了してフォルダを
 消すだけです (VST フィルタは先に引き継いでください。下記参照)。
 
-**アンインストール** (Windows の設定 > アプリ > OBS VST Ex Audio Filter)。アンインストーラーは:
+**アンインストール** (Windows の設定 > アプリ > VST Ex Audio Filter for OBS)。アンインストーラーは:
 1. シーンコレクションに VST Enigmax Loader のフィルタが残っていれば警告し、先に引き継げるようにします
 2. プラグインのサムネイル、高解像度スクリーンショット、設定・プリセット・履歴を削除するかを別々に尋ねます
    (「全てエクスポートしてから削除する」も選べます)
@@ -58,7 +58,7 @@ VST フィルタは VST Enigmax Loader のものなので、これを削除す�
 - 「VST Ex ピッチ / パン」: 半音単位のピッチとパン。デバイス間のズレ合わせで聞き分けやすくなります
 - 「VST Ex 疑似ステレオ」: DAW なしでモノラルマイクに広がりを作ります (ハース効果)。1 つのフィルタで追加・削除
 
-- ツール > VST Ex Audio Filter: 言語 (EN / JP / KR / ID / FR / TW)、バージョン、任意の部分のオン / オフ、デバッグ情報、 全設定のエクスポート / インポート (デバッグモード)
+- ツール > #cbOBScripts > VST Ex Audio Filter: 言語 (EN / JP / KR / ID / FR / TW)、バージョン、任意の部分のオン / オフ、デバッグ情報、 全設定のエクスポート / インポート (デバッグモード)
 
 ## VST Enigmax Loader
 
@@ -66,7 +66,7 @@ VST フィルタは VST Enigmax Loader のものなので、これを削除す�
 - リスト / サムネイル / 詳細表示のブラウザ、並べ替え、検索、お気に入り、HID (非表示)、メモ、使ったもの
 - エディタを初めて開いたときにサムネイルを自動撮影、一括生成も可能。フィルタごとの個別スクリーンショット
 - エディタ画面からプラグイン設定のエクスポート / インポート
-- **引き継ぎ** (ツール > VST Enigmax Loader > デバッグモード): VST2 フィルタを設定ごとその場で、OBS 標準の「VST 2.x プラグイン」フィルタとの間で移します
+- **引き継ぎ** (ツール > #cbOBScripts > VST Enigmax Loader > デバッグモード): VST2 フィルタを設定ごとその場で、OBS 標準の「VST 2.x プラグイン」フィルタとの間で移します
 - サムネイルと高解像度スクリーンショットは別々のフォルダに保存
 - 別フォルダにある同じプラグインは OBS と同じく別の項目として表示し、お気に入り、HID、メモ、サムネイルを 1 つずつ設定できます
 

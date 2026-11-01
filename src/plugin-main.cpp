@@ -1,6 +1,6 @@
 /*
-OBS VST Ex Audio Filter
-Copyright (C) 2026 BlackDream feat. ChromeBread
+VST Ex Audio Filter for OBS
+Copyright (C) 2026 ChromeBread feat. BlackDream
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

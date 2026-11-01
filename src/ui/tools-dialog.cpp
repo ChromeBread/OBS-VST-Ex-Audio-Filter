@@ -4,6 +4,7 @@
 #include "plugin-meta.h"
 #include "ui/backup.h"
 #include "loader-api.h"
+#include "ui/cb-menu.h"
 #include "ui/chain-view.h"
 #include "ui/master-dock.h"
 #include "ui/ui-text.h"
@@ -12,11 +13,13 @@
 #include <obs-module.h>
 #include <plugin-support.h>
 
+#include <QAction>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QDir>
+#include <QDockWidget>
 #include <QDirIterator>
 #include <QFileDialog>
 #include <QFormLayout>
@@ -91,11 +94,67 @@ QString configDir()
 
 } // namespace
 
+static void showDock(const char *id)
+{
+	auto *main = static_cast<QMainWindow *>(obs_frontend_get_main_window());
+	if (auto *dock = main->findChild<QDockWidget *>(id)) {
+		dock->setVisible(true);
+		dock->raise();
+	}
+}
+
+static void showFilterHint(const char *nameKey)
+{
+	QMessageBox::information(static_cast<QWidget *>(obs_frontend_get_main_window()), T(nameKey),
+				 T("CbMenu.FilterHint").arg(T(nameKey)));
+}
+
+// frontend-tools adds the action with its own translation of "Scripts", so ask that module for the text.
+static void openScriptsWindow()
+{
+	const char *text = nullptr;
+	obs_module_t *tools = obs_get_module("frontend-tools");
+	if (!tools || !obs_module_get_locale_string(tools, "Scripts", &text))
+		return;
+	auto *main = static_cast<QMainWindow *>(obs_frontend_get_main_window());
+	auto *menu = main->findChild<QMenu *>("menuTools");
+	if (!menu)
+		return;
+	for (QAction *action : menu->actions()) {
+		if (action->text() == QString::fromUtf8(text)) {
+			action->trigger();
+			return;
+		}
+	}
+}
+
 void install_tools_menu()
 {
-	obs_frontend_add_tools_menu_item("VST Ex Audio Filter", [](void *) { ToolsDialog::open(); }, nullptr);
-	if (PluginMeta::instance().uiValue("featureChainView").toBool(true))
-		obs_frontend_add_tools_menu_item("VST Ex Chain View", [](void *) { open_chain_view(); }, nullptr);
+	PluginMeta &meta = PluginMeta::instance();
+	cb_menu_add(10, "VST Ex Audio Filter", [] { ToolsDialog::open(); });
+	if (meta.uiValue("featureChainView").toBool(true))
+		cb_menu_add(30, "VST Ex Chain View", [] { open_chain_view(); });
+	if (meta.uiValue("featureMixer").toBool(true))
+		cb_menu_add(40, "VST Ex Mixer", [] { showDock("vst-ex-fx-dock"); });
+	if (meta.uiValue("featureSwitcher").toBool(true))
+		cb_menu_add(50, "VST Ex Switcher", [] { showDock("vst-ex-switch-dock"); });
+	if (meta.uiValue("featureWaveline").toBool(true))
+		cb_menu_add(60, "VST Ex WaveLine", [] { showDock("vst-ex-waveline-dock"); });
+	if (masterbus::unlocked())
+		cb_menu_add(70, "VST Ex Master", [] { showDock("vst-ex-master-dock"); });
+	cb_menu_add(80, T("Pitch.Name"), [] { showFilterHint("Pitch.Name"); });
+	cb_menu_add(90, T("Stereo.Name"), [] { showFilterHint("Stereo.Name"); });
+
+	auto *separator = new QAction(cb_menu());
+	separator->setSeparator(true);
+	cb_menu_insert(separator, 100);
+	// Lua scripts have no API for menu items, so these lead to the Scripts window where each one is managed.
+	int order = 110;
+	for (const char *script : {"Audio Device Restorer", "Font Bridge", "Image Resize Reader", "Source Resizer"}) {
+		cb_menu_add(order, script, [] { openScriptsWindow(); });
+		order += 10;
+	}
+
 	// First run: ask for the data folder once OBS is up, so it is not forgotten.
 	obs_frontend_add_event_callback(
 		[](enum obs_frontend_event event, void *) {
@@ -232,7 +291,7 @@ ToolsDialog::ToolsDialog(QWidget *parent) : QDialog(parent)
 	// Per-language pattern that cannot be misread: month names ("MMMM d, yyyy") or marked units ("yyyy'年'M'月'd'日'").
 	QString builtText = QLocale(currentLanguage()).toString(built.date(), T("Tools.BuildDate.Format"));
 	form->addRow(T("Tools.BuildDate"), selectable(builtText + "  " + built.toString("HH:mm")));
-	form->addRow(T("Tools.Author"), selectable(QStringLiteral("BlackDream feat. ChromeBread")));
+	form->addRow(T("Tools.Author"), selectable(QStringLiteral("ChromeBread feat. BlackDream")));
 	form->addRow(debug);
 
 	QWidget *debugSection = buildDebugSection();

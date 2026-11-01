@@ -1,6 +1,6 @@
 [English](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Bahasa Indonesia](README.id.md) | [Français](README.fr.md) | **繁體中文**
 
-# OBS VST Ex Audio Filter
+# VST Ex Audio Filter for OBS
 
 OBS Studio 的擴充音訊濾鏡視窗，具備歌唱直播用的即時 ON/OFF 切換、延遲量測與鏈狀圖，並附帶自有的
 **VST2 / VST3** 主機 **VST Enigmax Loader**。「濾鏡 (VST Ex)」視窗與 OBS 內建「濾鏡」視窗處理同一條濾鏡鏈，
@@ -11,24 +11,24 @@ VST 濾鏡屬於 VST Enigmax Loader，移除它後 OBS 就無法載入這些濾�
 將 VST2 濾鏡移到 OBS 內建的 VST 2.x 濾鏡。
 
 - Windows x64，OBS Studio 31 以上 (已在 33.0 測試)
-- 製作者: BlackDream feat. ChromeBread · 授權: GPL-2.0
+- 製作者: ChromeBread feat. BlackDream · 授權: GPL-2.0
 
 ## 安裝
 
 1. 從 [Releases](../../releases) 下載 `OBS-VST-Ex-Audio-Filter-<版本>-windows-x64-setup.exe`。
 2. 關閉 OBS 後執行。「完整安裝」安裝全部；「自訂安裝」可選擇:
-   - VST Ex Audio Filter (必要):「濾鏡 (VST Ex)」、音高 / 偽立體聲濾鏡、工具 > VST Ex Audio Filter
+   - VST Ex Audio Filter (必要):「濾鏡 (VST Ex)」、音高 / 偽立體聲濾鏡、工具 > #cbOBScripts > VST Ex Audio Filter
    - VST Enigmax Loader: VST2 / VST3 外掛
    - VST Ex Chain View、VST Ex Mixer 停駐視窗、VST Ex Switcher 停駐視窗
 
-   VST Ex 的選用部分之後可在 工具 > VST Ex Audio Filter 開關 (重新啟動 OBS 後生效)。
+   VST Ex 的選用部分之後可在 工具 > #cbOBScripts > VST Ex Audio Filter 開關 (重新啟動 OBS 後生效)。
 3. 啟動 OBS。第一次啟動時會詢問縮圖、截圖與歷程的儲存位置。
 
 **免安裝版**: `OBS-VST-Ex-Audio-Filter-<版本>-windows-x64-portable.zip`。關閉 OBS 後解壓縮到
 `C:\ProgramData\obs-studio\plugins\`，會得到 `OBS-VST-Ex-Audio-Filter` (VST Ex) 與 `vst-enigmax-loader`
 (VST Enigmax Loader) 兩個資料夾。不需要的資料夾可以不放。移除時關閉 OBS 並刪除資料夾即可 (請先移交 VST 濾鏡，見下方)。
 
-**解除安裝** (Windows 設定 > 應用程式 > OBS VST Ex Audio Filter)。解除安裝程式會:
+**解除安裝** (Windows 設定 > 應用程式 > VST Ex Audio Filter for OBS)。解除安裝程式會:
 1. 若場景集合仍使用 VST Enigmax Loader 濾鏡就發出警告，讓你先移交
 2. 分別詢問是否刪除外掛縮圖、高解析度截圖，以及設定 / 預設 / 歷程 (也可選「全部匯出後再刪除」)
 3. 若資料夾中有不是它建立的檔案 (其他檔案、`.bak` / `.org` 等改名的副本)，會列出清單讓你逐一刪除或保留
@@ -55,7 +55,7 @@ VST 濾鏡屬於 VST Enigmax Loader，移除它後 OBS 就無法載入這些濾�
 -「VST Ex 移調 / 聲像」: 以半音為單位的音高與聲像，對齊裝置時容易分辨
 -「VST Ex 假立體聲」: 不用 DAW 就能讓單聲道麥克風變寬 (哈斯效應)，一個濾鏡即可新增或移除
 
-- 工具 > VST Ex Audio Filter: 語言 (EN / JP / KR / ID / FR / TW)、版本、選用部分開關、除錯資訊、 匯出 / 匯入所有設定 (除錯模式)
+- 工具 > #cbOBScripts > VST Ex Audio Filter: 語言 (EN / JP / KR / ID / FR / TW)、版本、選用部分開關、除錯資訊、 匯出 / 匯入所有設定 (除錯模式)
 
 ## VST Enigmax Loader
 
@@ -63,7 +63,7 @@ VST 濾鏡屬於 VST Enigmax Loader，移除它後 OBS 就無法載入這些濾�
 - 清單 / 縮圖 / 詳細檢視的瀏覽器，排序、搜尋、我的最愛、HID (隱藏) 標記、備註、最近使用
 - 第一次開啟編輯器時自動擷取縮圖，也可一次全部產生；每個濾鏡的個別截圖
 - 在編輯器視窗匯出 / 匯入外掛設定
-- **移交** (工具 > VST Enigmax Loader > 除錯模式): 將 VST2 濾鏡連同設定原地移到 OBS 內建「VST 2.x 外掛」濾鏡，也可反向移回
+- **移交** (工具 > #cbOBScripts > VST Enigmax Loader > 除錯模式): 將 VST2 濾鏡連同設定原地移到 OBS 內建「VST 2.x 外掛」濾鏡，也可反向移回
 - 縮圖與高解析度截圖分開存放在不同資料夾
 - 不同資料夾中的相同外掛與 OBS 一樣視為不同項目，我的最愛、HID、備註與縮圖可逐一設定
 

@@ -110,7 +110,7 @@ LoaderDialog::LoaderDialog(QWidget *parent) : QDialog(parent)
 	form->addRow(T("Loader.BuildDate"), selectable(QLocale(PluginMeta::instance().uiValue("language").toString(
 								  QString::fromUtf8(obs_get_locale())))
 							  .toString(built, T("Loader.BuildDate.Format"))));
-	form->addRow(T("Loader.Author"), selectable(QStringLiteral("BlackDream feat. ChromeBread")));
+	form->addRow(T("Loader.Author"), selectable(QStringLiteral("ChromeBread feat. BlackDream")));
 	auto *debug = new QCheckBox(T("Loader.Debug"), this);
 	debug->setToolTip(T("Loader.Debug.Tip"));
 	debug->setChecked(meta.uiValue("debugMode").toBool(false));

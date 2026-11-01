@@ -1,6 +1,6 @@
 [English](README.md) | [日本語](README.ja.md) | **한국어** | [Bahasa Indonesia](README.id.md) | [Français](README.fr.md) | [繁體中文](README.zh-TW.md)
 
-# OBS VST Ex Audio Filter
+# VST Ex Audio Filter for OBS
 
 OBS Studio용 확장 오디오 필터 창입니다. 노래 방송을 위한 즉시 ON/OFF 전환, 지연 측정, 체인 보기를 갖추고,
 자체 **VST2 / VST3** 호스트 **VST Enigmax Loader**가 함께 제공됩니다. "필터 (VST Ex)" 창은 OBS 기본 "필터" 창과
@@ -11,17 +11,17 @@ VST 필터는 VST Enigmax Loader 소속이므로, 이것을 제거하면 OBS가 
 제거하기 전에 VST2 필터는 "인계" (아래)로 OBS 기본 VST 2.x 필터로 옮기세요.
 
 - Windows x64, OBS Studio 31 이상 (33.0에서 확인)
-- 제작자: BlackDream feat. ChromeBread · 라이선스: GPL-2.0
+- 제작자: ChromeBread feat. BlackDream · 라이선스: GPL-2.0
 
 ## 설치
 
 1. [Releases](../../releases)에서 `OBS-VST-Ex-Audio-Filter-<버전>-windows-x64-setup.exe`를 다운로드합니다.
 2. OBS를 종료하고 실행합니다. "전체 설치"는 모두, "사용자 지정 설치"는 다음 중에서 고를 수 있습니다:
-   - VST Ex Audio Filter (필수): "필터 (VST Ex)", 피치 / 의사 스테레오 필터, 도구 > VST Ex Audio Filter
+   - VST Ex Audio Filter (필수): "필터 (VST Ex)", 피치 / 의사 스테레오 필터, 도구 > #cbOBScripts > VST Ex Audio Filter
    - VST Enigmax Loader: VST2 / VST3 플러그인
    - VST Ex Chain View, VST Ex Mixer 도크, VST Ex Switcher 도크
 
-   VST Ex의 선택 항목은 나중에 도구 > VST Ex Audio Filter에서 켜고 끌 수 있습니다 (OBS 재시작 후 적용).
+   VST Ex의 선택 항목은 나중에 도구 > #cbOBScripts > VST Ex Audio Filter에서 켜고 끌 수 있습니다 (OBS 재시작 후 적용).
 3. OBS를 시작합니다. 처음 시작할 때 썸네일, 스크린샷, 기록을 저장할 곳을 묻습니다.
 
 **설치 없는 버전**: `OBS-VST-Ex-Audio-Filter-<버전>-windows-x64-portable.zip`. OBS를 종료하고
@@ -29,7 +29,7 @@ VST 필터는 VST Enigmax Loader 소속이므로, 이것을 제거하면 OBS가 
 (VST Enigmax Loader) 두 폴더가 생깁니다. 필요 없는 폴더는 넣지 않아도 됩니다. 제거는 OBS를 종료하고 폴더를 지우면
 됩니다 (VST 필터는 먼저 인계하세요. 아래 참조).
 
-**제거** (Windows 설정 > 앱 > OBS VST Ex Audio Filter). 제거 프로그램은:
+**제거** (Windows 설정 > 앱 > VST Ex Audio Filter for OBS). 제거 프로그램은:
 1. 장면 모음에 VST Enigmax Loader 필터가 남아 있으면 경고하여 먼저 인계할 수 있게 합니다
 2. 플러그인 썸네일, 고해상도 스크린샷, 설정 / 프리셋 / 기록을 삭제할지 각각 묻습니다
    ("모두 내보낸 뒤 삭제"도 선택 가능)
@@ -58,7 +58,7 @@ VST 필터는 VST Enigmax Loader 소속이므로, 이것을 제거하면 OBS가 
 - "VST Ex 피치 / 팬": 반음 단위 피치와 팬. 장치 간 타이밍을 맞출 때 구별하기 쉬워집니다
 - "VST Ex 의사 스테레오": DAW 없이 모노 마이크를 넓게 만듭니다 (하스 효과). 필터 하나로 추가 / 삭제
 
-- 도구 > VST Ex Audio Filter: 언어 (EN / JP / KR / ID / FR / TW), 버전, 선택 항목 켜기 / 끄기, 디버그 정보, 모든 설정 내보내기 / 가져오기 (디버그 모드)
+- 도구 > #cbOBScripts > VST Ex Audio Filter: 언어 (EN / JP / KR / ID / FR / TW), 버전, 선택 항목 켜기 / 끄기, 디버그 정보, 모든 설정 내보내기 / 가져오기 (디버그 모드)
 
 ## VST Enigmax Loader
 
@@ -66,7 +66,7 @@ VST 필터는 VST Enigmax Loader 소속이므로, 이것을 제거하면 OBS가 
 - 목록 / 썸네일 / 상세 보기 브라우저, 정렬, 검색, 즐겨찾기, HID (숨김), 메모, 최근 사용
 - 편집기를 처음 열 때 썸네일 자동 촬영, 일괄 생성 가능. 필터별 스크린샷
 - 편집기 창에서 플러그인 설정 내보내기 / 가져오기
-- **인계** (도구 > VST Enigmax Loader > 디버그 모드): VST2 필터를 설정째 그 자리에서 OBS 기본 "VST 2.x 플러그인" 필터와 주고받습니다.
+- **인계** (도구 > #cbOBScripts > VST Enigmax Loader > 디버그 모드): VST2 필터를 설정째 그 자리에서 OBS 기본 "VST 2.x 플러그인" 필터와 주고받습니다.
 - 썸네일과 고해상도 스크린샷은 별도 폴더에 저장
 - 다른 폴더에 있는 같은 플러그인은 OBS처럼 별도 항목으로 표시되며, 즐겨찾기, HID, 메모, 썸네일을 하나씩 설정할 수 있습니다
 

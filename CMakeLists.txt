@@ -133,6 +133,8 @@ target_sources(
     src/ui/fx-dock.cpp
     src/ui/fx-dock.h
     src/ui/menu-hook.h
+    src/ui/cb-menu.h
+    src/ui/window-memory.h
     src/ui/master-dock.cpp
     src/ui/master-dock.h
     src/ui/properties-panel.cpp

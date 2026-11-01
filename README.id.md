@@ -1,6 +1,6 @@
 [English](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | **Bahasa Indonesia** | [Français](README.fr.md) | [繁體中文](README.zh-TW.md)
 
-# OBS VST Ex Audio Filter
+# VST Ex Audio Filter for OBS
 
 Jendela filter audio tambahan untuk OBS Studio dengan ON/OFF instan untuk siaran bernyanyi, alat latensi, dan
 tampilan rantai, ditambah **VST Enigmax Loader**, host **VST2 / VST3** miliknya sendiri. Jendela *Filter (VST Ex)*
@@ -11,17 +11,17 @@ Filter VST milik VST Enigmax Loader: jika dihapus, OBS tidak bisa memuatnya lagi
 bawaan OBS dengan *Serah terima* (lihat di bawah).
 
 - Windows x64, OBS Studio 31 atau lebih baru (diuji di 33.0)
-- Pembuat: BlackDream feat. ChromeBread · Lisensi: GPL-2.0
+- Pembuat: ChromeBread feat. BlackDream · Lisensi: GPL-2.0
 
 ## Instalasi
 
 1. Unduh `OBS-VST-Ex-Audio-Filter-<versi>-windows-x64-setup.exe` dari [Releases](../../releases).
 2. Tutup OBS lalu jalankan. *Instalasi penuh* memasang semuanya; *Instalasi kustom* bisa memilih:
-   - VST Ex Audio Filter (wajib): *Filter (VST Ex)*, filter pitch / pseudo stereo, Alat > VST Ex Audio Filter
+   - VST Ex Audio Filter (wajib): *Filter (VST Ex)*, filter pitch / pseudo stereo, Alat > #cbOBScripts > VST Ex Audio Filter
    - VST Enigmax Loader: plugin VST2 / VST3
    - VST Ex Chain View, dock VST Ex Mixer, dock VST Ex Switcher
 
-   Bagian opsional VST Ex bisa dinyalakan / dimatikan nanti di Alat > VST Ex Audio Filter (berlaku setelah OBS dimulai ulang).
+   Bagian opsional VST Ex bisa dinyalakan / dimatikan nanti di Alat > #cbOBScripts > VST Ex Audio Filter (berlaku setelah OBS dimulai ulang).
 3. Jalankan OBS. Saat pertama kali, OBS menanyakan tempat menyimpan thumbnail, tangkapan layar, dan riwayat.
 
 **Portabel (tanpa installer)**: `OBS-VST-Ex-Audio-Filter-<versi>-windows-x64-portable.zip`. Tutup OBS lalu ekstrak
@@ -29,7 +29,7 @@ ke `C:\ProgramData\obs-studio\plugins\`: muncul folder `OBS-VST-Ex-Audio-Filter`
 (VST Enigmax Loader). Folder yang tidak diperlukan boleh tidak disalin. Untuk menghapus, tutup OBS dan hapus foldernya
 (serahterimakan filter VST dulu, lihat di bawah).
 
-**Hapus instalasi** (Pengaturan Windows > Aplikasi > OBS VST Ex Audio Filter). Penghapus instalasi:
+**Hapus instalasi** (Pengaturan Windows > Aplikasi > VST Ex Audio Filter for OBS). Penghapus instalasi:
 1. memperingatkan jika koleksi adegan masih memakai filter VST Enigmax Loader, agar bisa diserahterimakan dulu;
 2. menanyakan terpisah apakah menghapus thumbnail plugin, tangkapan layar resolusi tinggi, serta pengaturan /
    preset / riwayat, dengan pilihan mengekspor semuanya dulu;
@@ -58,7 +58,7 @@ ke `C:\ProgramData\obs-studio\plugins\`: muncul folder `OBS-VST-Ex-Audio-Filter`
 - *VST Ex Pitch / Pan*: pitch per semitone dan pan, memudahkan membedakan perangkat saat menyelaraskan
 - *VST Ex Pseudo Stereo*: melebarkan mik mono tanpa DAW (efek Haas), satu filter untuk ditambah atau dihapus
 
-- Alat > VST Ex Audio Filter: bahasa (EN / JP / KR / ID / FR / TW), versi, bagian opsional, info debug, ekspor / impor semua pengaturan (mode debug)
+- Alat > #cbOBScripts > VST Ex Audio Filter: bahasa (EN / JP / KR / ID / FR / TW), versi, bagian opsional, info debug, ekspor / impor semua pengaturan (mode debug)
 
 ## VST Enigmax Loader
 
@@ -66,7 +66,7 @@ ke `C:\ProgramData\obs-studio\plugins\`: muncul folder `OBS-VST-Ex-Audio-Filter`
 - Penjelajah dengan tampilan daftar / gambar mini / detail, urutkan, cari, favorit, tanda HID (sembunyi), catatan, terakhir dipakai
 - Gambar mini otomatis saat editor pertama kali dibuka, atau sekaligus; tangkapan layar per filter
 - Ekspor / impor pengaturan plugin dari jendela editor
-- **Serah terima** (Alat > VST Enigmax Loader > Mode debug): memindahkan filter VST2 di tempat, beserta pengaturannya, ke dan dari filter *VST 2.x Plug-in* bawaan OBS.
+- **Serah terima** (Alat > #cbOBScripts > VST Enigmax Loader > Mode debug): memindahkan filter VST2 di tempat, beserta pengaturannya, ke dan dari filter *VST 2.x Plug-in* bawaan OBS.
 - Thumbnail dan tangkapan layar resolusi tinggi disimpan di folder terpisah
 - Salinan plugin di folder berbeda adalah entri terpisah, seperti di OBS: favorit, HID, catatan, dan gambar mini diatur satu per satu
 

@@ -4,6 +4,7 @@
 #include "plugin-scanner.h"
 #include "ui/editor-window.h"
 #include "ui/ui-text.h"
+#include "ui/window-memory.h"
 
 #include <QButtonGroup>
 #include <QComboBox>
@@ -212,6 +213,7 @@ PluginPicker::PluginPicker(QWidget *parent, bool multi) : QDialog(parent), sortC
 {
 	setWindowTitle(T("PickPlugin"));
 	resize(1000, 620);
+	new WindowMemory(this, "windowPluginPicker");
 	auto &meta = PluginMeta::instance();
 	auto &catalog = PluginCatalog::instance();
 

@@ -7,6 +7,7 @@
 #include "ui/properties-panel.h"
 #include "ui/sync-dialog.h"
 #include "ui/ui-text.h"
+#include "ui/window-memory.h"
 #include "loader-api.h"
 
 #include <obs-frontend-api.h>
@@ -179,6 +180,7 @@ ExFiltersDialog::ExFiltersDialog(obs_source_t *src, QWidget *parent) : QDialog(p
 	setAttribute(Qt::WA_DeleteOnClose);
 	setWindowTitle(T("ExFilters.Title").arg(QString::fromUtf8(obs_source_get_name(source))));
 	resize(900, 560);
+	new WindowMemory(this, "windowExFilters");
 
 	auto *addButton = new QPushButton(T("Add"), this);
 	removeButton = new QPushButton(T("Delete"), this);

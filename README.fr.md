@@ -1,6 +1,6 @@
 [English](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Bahasa Indonesia](README.id.md) | **Français** | [繁體中文](README.zh-TW.md)
 
-# OBS VST Ex Audio Filter
+# VST Ex Audio Filter for OBS
 
 Une fenêtre de filtres audio étendue pour OBS Studio : ON/OFF instantané pour le chant en direct, outils de latence
 et vue de chaîne, plus **VST Enigmax Loader**, son propre hôte **VST2 / VST3**. La fenêtre *Filtres (VST Ex)* agit
@@ -11,17 +11,17 @@ VST). Les filtres VST appartiennent à VST Enigmax Loader : s'il est retiré, OB
 les filtres VST2 vers le filtre VST 2.x d'OBS avec *Transfert* (voir plus bas).
 
 - Windows x64, OBS Studio 31 ou plus récent (testé sur 33.0)
-- Auteur : BlackDream feat. ChromeBread · Licence : GPL-2.0
+- Auteur : ChromeBread feat. BlackDream · Licence : GPL-2.0
 
 ## Installation
 
 1. Téléchargez `OBS-VST-Ex-Audio-Filter-<version>-windows-x64-setup.exe` depuis [Releases](../../releases).
 2. Quittez OBS et lancez-le. *Installation complète* installe tout ; *Installation personnalisée* permet de choisir :
-   - VST Ex Audio Filter (requis) : *Filtres (VST Ex)*, filtres hauteur / pseudo-stéréo, Outils > VST Ex Audio Filter
+   - VST Ex Audio Filter (requis) : *Filtres (VST Ex)*, filtres hauteur / pseudo-stéréo, Outils > #cbOBScripts > VST Ex Audio Filter
    - VST Enigmax Loader : plugins VST2 / VST3
    - VST Ex Chain View, dock VST Ex Mixer, dock VST Ex Switcher
 
-   Les parties facultatives de VST Ex s'activent ou se désactivent ensuite dans Outils > VST Ex Audio Filter (après redémarrage d'OBS).
+   Les parties facultatives de VST Ex s'activent ou se désactivent ensuite dans Outils > #cbOBScripts > VST Ex Audio Filter (après redémarrage d'OBS).
 3. Lancez OBS. Au premier démarrage, il demande où garder miniatures, captures et historique.
 
 **Portable (sans installeur)** : `OBS-VST-Ex-Audio-Filter-<version>-windows-x64-portable.zip`. Quittez OBS et
@@ -29,7 +29,7 @@ extrayez-le dans `C:\ProgramData\obs-studio\plugins\` : vous obtenez les dossier
 et `vst-enigmax-loader` (VST Enigmax Loader). Omettez celui dont vous ne voulez pas. Pour retirer, quittez OBS et
 supprimez les dossiers (transférez d'abord les filtres VST, voir plus bas).
 
-**Désinstallation** (Paramètres Windows > Applications > OBS VST Ex Audio Filter). Le désinstalleur :
+**Désinstallation** (Paramètres Windows > Applications > VST Ex Audio Filter for OBS). Le désinstalleur :
 1. avertit si vos collections de scènes utilisent encore des filtres VST Enigmax Loader, pour les transférer d'abord ;
 2. demande séparément s'il faut supprimer les miniatures, les captures haute résolution et les réglages /
    préréglages / historique, avec l'option de tout exporter avant ;
@@ -58,7 +58,7 @@ supprimez les dossiers (transférez d'abord les filtres VST, voir plus bas).
 - *VST Ex Transposition / Pan* : hauteur en demi-tons et panoramique, pratique pour distinguer les appareils
 - *VST Ex Pseudo-stéréo* : élargit un micro mono sans DAW (effet Haas), un seul filtre à ajouter ou retirer
 
-- Outils > VST Ex Audio Filter : langue (EN / JP / KR / ID / FR / TW), version, parties facultatives, infos de débogage, export / import de tous les réglages (mode débogage)
+- Outils > #cbOBScripts > VST Ex Audio Filter : langue (EN / JP / KR / ID / FR / TW), version, parties facultatives, infos de débogage, export / import de tous les réglages (mode débogage)
 
 ## VST Enigmax Loader
 
@@ -66,7 +66,7 @@ supprimez les dossiers (transférez d'abord les filtres VST, voir plus bas).
 - Navigateur en liste / miniatures / détails, tri, recherche, favoris, marques HID (masquer), notes, récemment utilisés
 - Miniatures prises automatiquement à la première ouverture d’un éditeur, ou toutes d’un coup ; captures par filtre
 - Exporter / importer les réglages d’un plugin depuis la fenêtre de l’éditeur
-- **Transfert** (Outils > VST Enigmax Loader > Mode débogage) : déplace les filtres VST2 sur place, avec leurs réglages, vers et depuis le filtre *VST 2.x Plug-in* d'OBS.
+- **Transfert** (Outils > #cbOBScripts > VST Enigmax Loader > Mode débogage) : déplace les filtres VST2 sur place, avec leurs réglages, vers et depuis le filtre *VST 2.x Plug-in* d'OBS.
 - Miniatures et captures haute résolution sont rangées dans des dossiers séparés
 - Les copies d'un plugin dans des dossiers différents sont des entrées séparées, comme dans OBS : favoris, HID, notes et miniatures se règlent une par une
 

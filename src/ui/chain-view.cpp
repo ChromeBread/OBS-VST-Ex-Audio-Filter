@@ -5,6 +5,7 @@
 
 #include "ui/ex-filters-dialog.h"
 #include "ui/ui-text.h"
+#include "ui/window-memory.h"
 
 #include <obs-frontend-api.h>
 #include <obs.hpp>
@@ -647,6 +648,7 @@ void open_chain_view()
 	dlg->setAttribute(Qt::WA_DeleteOnClose);
 	dlg->setWindowTitle(T("Chain.Title"));
 	dlg->resize(1100, 560);
+	new WindowMemory(dlg, "windowChainView");
 	auto *scroll = new QScrollArea(dlg);
 	auto *canvas = new ChainCanvas();
 	scroll->setWidget(canvas);

@@ -1,6 +1,6 @@
 /*
 VST Enigmax Loader
-Copyright (C) 2026 BlackDream feat. ChromeBread
+Copyright (C) 2026 ChromeBread feat. BlackDream
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 
 #include "loader/loader-dialog.h"
 #include "plugin-meta.h"
+#include "ui/cb-menu.h"
 #include "ui/plugin-picker.h"
 #include "vst-filter.h"
 
@@ -139,7 +140,7 @@ bool obs_module_load(void)
 		obs_module_set_locale(lang.toUtf8().constData());
 	register_vst_ex_filter();
 	registerProcs();
-	obs_frontend_add_tools_menu_item("VST Enigmax Loader", [](void *) { LoaderDialog::open(); }, nullptr);
+	cb_menu_add(20, "VST Enigmax Loader", [] { LoaderDialog::open(); });
 	obs_log(LOG_INFO, "plugin loaded successfully (version %s)", PLUGIN_VERSION);
 	return true;
 }

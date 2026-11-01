@@ -128,32 +128,53 @@ static void openScriptsWindow()
 	}
 }
 
+static void cbHeading(int order, const char *key)
+{
+	QMenu *menu = cb_menu();
+	if (order > 100) {
+		auto *separator = new QAction(menu);
+		separator->setSeparator(true);
+		cb_menu_insert(separator, order - 1);
+	}
+	auto *heading = new QAction(T(key), menu);
+	heading->setEnabled(false); // a label: QMenu::addSection draws no text in some themes
+	cb_menu_insert(heading, order);
+}
+
 void install_tools_menu()
 {
 	PluginMeta &meta = PluginMeta::instance();
-	cb_menu_add(10, "VST Ex Audio Filter", [] { ToolsDialog::open(); });
-	if (meta.uiValue("featureChainView").toBool(true))
-		cb_menu_add(30, "VST Ex Chain View", [] { open_chain_view(); });
-	if (meta.uiValue("featureMixer").toBool(true))
-		cb_menu_add(40, "VST Ex Mixer", [] { showDock("vst-ex-fx-dock"); });
-	if (meta.uiValue("featureSwitcher").toBool(true))
-		cb_menu_add(50, "VST Ex Switcher", [] { showDock("vst-ex-switch-dock"); });
-	if (meta.uiValue("featureWaveline").toBool(true))
-		cb_menu_add(60, "VST Ex WaveLine", [] { showDock("vst-ex-waveline-dock"); });
-	if (masterbus::unlocked())
-		cb_menu_add(70, "VST Ex Master", [] { showDock("vst-ex-master-dock"); });
-	cb_menu_add(80, T("Pitch.Name"), [] { showFilterHint("Pitch.Name"); });
-	cb_menu_add(90, T("Stereo.Name"), [] { showFilterHint("Stereo.Name"); });
+	bool chainView = meta.uiValue("featureChainView").toBool(true);
+	bool mixer = meta.uiValue("featureMixer").toBool(true);
+	bool switcher = meta.uiValue("featureSwitcher").toBool(true);
+	bool waveline = meta.uiValue("featureWaveline").toBool(true);
 
-	auto *separator = new QAction(cb_menu());
-	separator->setSeparator(true);
-	cb_menu_insert(separator, 100);
 	// Lua scripts have no API for menu items, so these lead to the Scripts window where each one is managed.
-	int order = 110;
-	for (const char *script : {"Audio Device Restorer", "Font Bridge", "Image Resize Reader", "Source Resizer"}) {
-		cb_menu_add(order, script, [] { openScriptsWindow(); });
-		order += 10;
-	}
+	cbHeading(100, "CbMenu.Scripts");
+	cb_menu_add(110, "Audio Device Restorer", [] { openScriptsWindow(); });
+	cb_menu_add(120, "Font Bridge", [] { openScriptsWindow(); });
+
+	if (mixer || switcher || waveline || masterbus::unlocked())
+		cbHeading(200, "CbMenu.Docks");
+	if (mixer)
+		cb_menu_add(210, "VST Ex Mixer", [] { showDock("vst-ex-fx-dock"); });
+	if (switcher)
+		cb_menu_add(220, "VST Ex Switcher", [] { showDock("vst-ex-switch-dock"); });
+	if (waveline)
+		cb_menu_add(230, "VST Ex WaveLine", [] { showDock("vst-ex-waveline-dock"); });
+	if (masterbus::unlocked())
+		cb_menu_add(240, "VST Ex Master", [] { showDock("vst-ex-master-dock"); });
+
+	cbHeading(300, "CbMenu.CustomDocks");
+	cb_menu_add(310, "Image Resize Reader", [] { openScriptsWindow(); });
+	cb_menu_add(320, "Source Resizer", [] { openScriptsWindow(); });
+
+	cbHeading(400, "CbMenu.Filters");
+	cb_menu_add(410, "VST Ex Audio Filter", [] { ToolsDialog::open(); });
+	if (chainView)
+		cb_menu_add(430, "VST Ex Chain View", [] { open_chain_view(); });
+	cb_menu_add(440, T("Pitch.Name"), [] { showFilterHint("Pitch.Name"); });
+	cb_menu_add(450, T("Stereo.Name"), [] { showFilterHint("Stereo.Name"); });
 
 	// First run: ask for the data folder once OBS is up, so it is not forgotten.
 	obs_frontend_add_event_callback(

@@ -140,7 +140,7 @@ bool obs_module_load(void)
 		obs_module_set_locale(lang.toUtf8().constData());
 	register_vst_ex_filter();
 	registerProcs();
-	cb_menu_add(20, "VST Enigmax Loader", [] { LoaderDialog::open(); });
+	cb_menu_add(420, "VST Enigmax Loader", [] { LoaderDialog::open(); });
 	obs_log(LOG_INFO, "plugin loaded successfully (version %s)", PLUGIN_VERSION);
 	return true;
 }

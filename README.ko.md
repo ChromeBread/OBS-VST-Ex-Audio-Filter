@@ -110,3 +110,7 @@ Visual Studio 2022와 CMake 3.28 이상: `cmake --preset windows-x64` 후
 `cmake --build build_x64 --config RelWithDebInfo`.
 
 VST는 Steinberg Media Technologies GmbH의 등록 상표입니다.
+
+## 업데이트 안내
+
+이 소프트웨어에는 업데이트 확인이나 자동 업데이트 기능이 없으며, 앞으로도 인터넷에 연결하는 자동 업데이트 기능을 구현할 계획이 없습니다. 업데이트할 때는 개발자의 링크를 따라 배포 사이트에서 직접 내려받으세요: [Releases](../../releases)
